@@ -44,17 +44,30 @@ python3 app.py```{{execute}}
 
 Create a Dockerfile to package the app:
 
-```cat << EOF > /root/pysmarthome/Dockerfile.txt
+```cat << EOF > /root/pysmarthome/Dockerfile
 FROM python:3.7
+# Creating Application Source Code Directory
 RUN mkdir -p /smarthome/src
+
+# Setting Home Directory for containers
 WORKDIR /smarthome/src
+
+# Installing python dependencies
 COPY requirements.txt /smarthome/src
 RUN pip install --no-cache-dir -r requirements.txt
+# Copying src code to Container
 COPY . /smarthome/src
 
+# Application Environment variables
 ENV APP_ENV development
+
+# Exposing Ports
 EXPOSE 5000
-CMD ["python", "app.py"] ```{{execute}}
+
+# Running Python Application
+CMD ["python", "app.py"] 
+EOF
+```{{execute}}
 
 Build Docker image:
 
