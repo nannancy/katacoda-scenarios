@@ -44,7 +44,7 @@ python3 app.py```{{execute}}
 
 Create a Dockerfile to package the app:
 
-```cat << EOF > /root/pysmarthome/Dockerfile
+```cat << EOF > /root/pysmarthome/Dockerfile.txt
 FROM python:3.7
 # Creating Application Source Code Directory
 RUN mkdir -p /smarthome/src
