@@ -35,9 +35,11 @@ EOF
 Install python dependencies and Run:
 
 ```echo "flask" > requirements.txt \ 
-echo "prometheus_client">> requirements.txt \ 
-python3 -m pip install --upgrade pip \
-pip install -r requirements.txt \
+echo "prometheus_client">> requirements.txt \
+python3 -m pip install --upgrade pip```{{execute}}
+
+
+```pip install -r requirements.txt \
 python3 app.py```{{execute}}
 
 Create a Dockerfile to package the app:
