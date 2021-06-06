@@ -32,14 +32,43 @@ if __name__ == "__main__":
 EOF
 ```{{execute}}
 
-Install python dependencies:
+Install python dependencies and Run:
 
 ```echo "flask" > requirements.txt \ 
 echo "prometheus_client">> requirements.txt \ 
-python3 -m pip install --upgrade pip && pip install requirements.txt```{{execute}}
+python3 -m pip install --upgrade pip \
+pip install -r requirements.txt \
+python3 app.py```{{execute}}
 
-Run the web service:
+Create a Dockerfile to package the app:
 
-```python3 app.py```{{execute}}
+```cat << EOF > /root/pysmarthome/Dockerfile
+FROM python:3.7
+# Creating Application Source Code Directory
+RUN mkdir -p /smarthome/src
 
+# Setting Home Directory for containers
+WORKDIR /smarthome/src
+
+# Installing python dependencies
+COPY requirements.txt /smarthome/src
+RUN pip install --no-cache-dir -r requirements.txt
+# Copying src code to Container
+COPY . /smarthome/src
+
+# Application Environment variables
+ENV APP_ENV development
+
+# Exposing Ports
+EXPOSE 5000
+
+# Running Python Application
+CMD ["python", "app.py"] ```{{execute}}
+
+Build Docker image:
+
+```docker build -f Dockerfile -t pysmarthome:v1 . ```{{execute}}
+
+Zip the image for next step use:
+```docker save --output pysmarthome:v1.tar pysmarthome:v1```{{execute}}
 
