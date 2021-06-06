@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {},
+  "files": {
+    "intro": 0,
+    "finish": 1,
+    "step1": 2,
+    "step2": 3,
+    "step3": 4,
+    "step4": 5
+  }
+}
