@@ -34,10 +34,10 @@ EOF
 
 Install python dependencies:
 
-```echo "flask" >> requirements.py 
-&& echo "prometheus_client">> requirements.py 
-&& python3 -m pip install --upgrade pip
-&& pip install requirements.txt```{{execute}}
+```echo "flask" >> requirements.py \ 
+echo "prometheus_client">> requirements.py \ 
+python3 -m pip install --upgrade pip \
+pip install requirements.txt```{{execute}}
 
 Run the web service:
 
