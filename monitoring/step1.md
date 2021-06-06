@@ -6,7 +6,7 @@ A Katacoda scenario is a series of Markdown files, bash scripts and a JSON file 
 
 Clone our example repository that contains the set of documentation with the following command:
 
-`mkdir pysmarthome && cd pysmarthome && touch app.py{{execute}}`
+```mkdir pysmarthome && cd pysmarthome && touch app.py```{{execute}}
 
 ```
 cat << EOF > /tmp/pysmarthome/app.py
