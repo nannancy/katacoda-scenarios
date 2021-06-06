@@ -9,7 +9,7 @@ Clone our example repository that contains the set of documentation with the fol
 ```mkdir pysmarthome && cd pysmarthome && touch app.py```{{execute}}
 
 ```
-cat << EOF > /tmp/pysmarthome/app.py
+cat << EOF > /root/pysmarthome/app.py
 #import Adafruit_DHT as adht
 import time
 import logging
@@ -30,5 +30,9 @@ def metrics():
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
 EOF
-```{{execute}}
-```
+```  
+{{execute}}
+
+
+
+
