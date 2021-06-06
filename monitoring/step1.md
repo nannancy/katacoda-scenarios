@@ -1,6 +1,4 @@
-# a python app
-
-A Katacoda scenario is a series of Markdown files, bash scripts and a JSON file to define how your scenario should be configured, the text for the scenario and any automation required.
+# Publishing custom metrics using Prometheus_client
 
 ## Create an image
 
