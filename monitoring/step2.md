@@ -1,6 +1,7 @@
 # Install Prometheus Operator in k3s
+
 ## Install k3s
-`sudo su - && curl -sfL https://get.k3s.io | sh -
+`curl -sfL https://get.k3s.io | sh -
 `{{execute}}
 
 ## Install Helm
@@ -29,12 +30,11 @@ NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
 prometheus-kube-prometheus-operator   1/1     1            1           2d5h
 prometheus-kube-state-metrics         1/1     1            1           2d5h
 prometheus-grafana                    1/1     1            1           2d5h
-pysmarthome                           1/1     1            1           2d9h
 ````
 
 prometheus-grafana is deployed.
 
-`nohup kubectl port-forward deployment/prometheus-grafana 3000 $`
+`nohup kubectl port-forward deployment/prometheus-grafana 3000`{{execute}}
 
 ## Generated Web Link
 To enter grafana, we need the following information:

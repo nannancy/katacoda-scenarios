@@ -1,11 +1,11 @@
 # Deploy pysmarthome
 ## Import images into k3s
 
-`sudo k3s ctr images import /root/pysmarthome/pysmarthome:v1.tar`{{execute}}
+`sudo k3s ctr images import /root/pysmarthome/pysmarthome-v1.tar`{{execute}}
 
 ## Deploying pysmarthome
 
-`sudo su -&&touch deployment.yaml`{{execute}}
+`touch deployment.yaml`{{execute}}
 
 ```
 cat << EOF > /root/deployment.yaml
@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: pysmarthome
-        image: pypismarthome:v1
+        image: pysmarthome:v1
         imagePullPolicy: Never
         ports:
           - name: http
@@ -82,6 +82,8 @@ spec:
 
 EOF
 ```{{execute}}
+
+`kubectl apply -f deployment.yaml`{{execute}}
 
 Reload Prometheus:
 

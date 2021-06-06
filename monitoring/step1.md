@@ -1,8 +1,6 @@
 # Publishing custom metrics using Prometheus_client
 
-## Create an image
-
-Clone our example repository that contains the set of documentation with the following command:
+Create app.py:
 
 ```mkdir pysmarthome && cd pysmarthome && touch app.py```{{execute}}
 
@@ -45,9 +43,10 @@ python3 app.py```{{execute}}
 https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com
 
 
+Ctrl+C to exit.
 
 Create a Dockerfile to package the app:
-`^C&&touch Dockerfile`{{execute}}
+touch Dockerfile`{{execute}}
 ```
 cat << EOF > /root/pysmarthome/Dockerfile
 FROM python:3.7
@@ -81,5 +80,5 @@ Build Docker image:
 ```docker build -f Dockerfile -t pysmarthome:v1 . ```{{execute}}
 
 Zip the image for next step use:
-```docker save --output pysmarthome:v1.tar pysmarthome:v1```{{execute}}
+```docker save --output pysmarthome-v1.tar pysmarthome:v1```{{execute}}
 
