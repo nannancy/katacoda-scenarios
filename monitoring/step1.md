@@ -44,8 +44,24 @@ python3 app.py```{{execute}}
 
 Create a Dockerfile to package the app:
 
-```cat << EOF > /root/pysmarthome/Dockerfile.txt
-FROM python:3.7
+```
+cat << EOF > /root/pysmarthome/Dockerfile
+#import Adafruit_DHT as adht
+
+app = Flask(__name__)
+registry = CollectorRegistry()
+gauge = Gauge("my_gauge","show gauge",["dht11_sensor"],registry=registry)
+@app.route("/metrics")
+def metrics():
+    #h,t = adht.read_retry(adht.DHT11, 4)
+    h = 33
+    t = 24
+    gauge.labels('temparature').set(t)
+    gauge.labels('humidity').set(h)
+    return Response(generate_latest(registry),mimetype='text/plain')
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
+EOF
 ```{{execute}}
 
 Build Docker image:
