@@ -30,9 +30,14 @@ def metrics():
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
 EOF
-```  
-{{execute}}
+```{{execute}}
 
+Install python dependencies:
 
+```echo "flask" >> requirements.py && echo "prometheus_client">> requirements.py && pip install -f requirements.txt```{{execute}}
+
+Run the web service:
+
+```python3 app.py```{{execute}}
 
 
