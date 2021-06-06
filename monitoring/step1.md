@@ -19,7 +19,7 @@ from prometheus_client import Gauge, generate_latest, CollectorRegistry
 app = Flask(__name__)
 registry = CollectorRegistry()
 gauge = Gauge("my_gauge","show gauge",["dht11_sensor"],registry=registry)
-@app.route("/metrics")
+@app.route("/")
 def metrics():
     #h,t = adht.read_retry(adht.DHT11, 4)
     h = 33
@@ -41,6 +41,11 @@ python3 -m pip install --upgrade pip```{{execute}}
 
 ```pip install -r requirements.txt &&
 python3 app.py```{{execute}}
+
+## Generated Web Link
+
+https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com
+
 
 Create a Dockerfile to package the app:
 
