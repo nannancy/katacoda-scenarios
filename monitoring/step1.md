@@ -34,7 +34,7 @@ EOF
 
 Install python dependencies:
 
-```echo "flask" >> requirements.txt \ 
+```echo "flask" > requirements.txt \ 
 echo "prometheus_client">> requirements.txt \ 
 python3 -m pip install --upgrade pip && pip install requirements.txt```{{execute}}
 
