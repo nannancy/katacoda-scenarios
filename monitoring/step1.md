@@ -34,18 +34,18 @@ EOF
 
 Install python dependencies and Run:
 
-```echo "flask" > requirements.txt \ 
-echo "prometheus_client">> requirements.txt \
+```echo "flask" > requirements.txt &&
+echo "prometheus_client">> requirements.txt&&
 python3 -m pip install --upgrade pip```{{execute}}
 
 
-```pip install -r requirements.txt \
+```pip install -r requirements.txt &&
 python3 app.py```{{execute}}
 
 Create a Dockerfile to package the app:
 
 ```
-cat << EOF > /root/pysmarthome/Dockerfile
+touch Dockerfile && cat << EOF > /root/pysmarthome/Dockerfile
 FROM python:3.7
 MAINTAINER Xinyuan
 
