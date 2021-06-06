@@ -47,8 +47,9 @@ python3 app.py```{{execute}}
 https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com
 
 
+
 Create a Dockerfile to package the app:
-`touch Dockerfile`{{execute}}
+`^C&&touch Dockerfile`{{execute}}
 ```
 cat << EOF > /root/pysmarthome/Dockerfile
 FROM python:3.7
