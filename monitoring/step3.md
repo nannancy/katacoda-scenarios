@@ -83,7 +83,7 @@ spec:
 EOF
 ```{{execute}}
 
-`kubectl apply -f deployment.yaml`{{execute}}
+`kubectl apply -f /root/deployment.yaml`{{execute}}
 
 Reload Prometheus:
 
