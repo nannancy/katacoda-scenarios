@@ -1,6 +1,6 @@
 {
   "title": "monitoring custom metrics with Prometheus Operator",
-  "description": "monitoring custom metrics with Prometheus Operator",
+  "description": "use python, k3s, Prometheus-operator",
   "difficulty": "Beginner",
   "time": "30 minutes",
   "details": {
